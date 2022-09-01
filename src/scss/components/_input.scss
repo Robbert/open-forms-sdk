@@ -25,6 +25,10 @@
   }
 }
 
+.utrecht-textbox--openforms-time {
+    width: 4em;
+}
+
 // aliases that are also text inputs, but have their own class names:
 
 $aliases: email, iban;
