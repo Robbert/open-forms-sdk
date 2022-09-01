@@ -8,6 +8,13 @@
 @import 'flatpickr/dist/flatpickr.min.css';
 @import "formiojs/dist/formio.form.css";
 
+// NL Design System community components
+@import "@utrecht/components/button/css/index";
+@import "@utrecht/components/document/css/mixin";
+:root {
+	@include utrecht-document;
+}
+
 // output the design tokens in :root
 @import "@open-formulieren/design-tokens/dist/root.css";
 

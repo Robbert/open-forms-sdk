@@ -8,7 +8,11 @@ const ValidationErrors = ({ errors=[] }) => (
   <div className={getBEMClassName('errors')}>
     {
       errors.map((err, index) => (
-        <div key={index} className={getBEMClassName('message', ['error'])}>
+        <div key={index} className={[
+          getBEMClassName('message', ['error']),
+          "utrecht-form-field-description",
+          "utrecht-form-field-description--invalid",
+        ].join(' ')}>
           {err}
         </div>
       ))

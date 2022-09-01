@@ -35,3 +35,10 @@
     padding-left: 0.6em;
   }
 }
+
+:root {
+  --utrecht-link-color: #{$typography-color-link};
+  --utrecht-link-text-decoration: #{$typography-decoration-link};
+  --utrecht-link-hover-color: #{$typography-color-link-hover};
+  --utrecht-link-hover-text-decoration: #{$typography-decoration-link};
+}
