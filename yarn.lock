@@ -2659,6 +2659,17 @@
     js-interpreter "https://github.com/formio/JS-Interpreter#v1.1.0-formio.2"
     lodash "^4.17.20"
 
+"@formio/react@^5.2.4-rc.1":
+  version "5.2.4-rc.1"
+  resolved "https://registry.yarnpkg.com/@formio/react/-/react-5.2.4-rc.1.tgz#252c89a3176213cd4cc3771f5ca9845de1c22cb6"
+  integrity sha512-I/dvmRuQr0/I0MEZlU/5zDp1jNhFkOcwv3Ai5fxyfmjyJDzC+3J/OyPwQL92Njbl5ogTlfo4/frtSHMXcrJtow==
+  dependencies:
+    babel-polyfill "^6.26.0"
+    core-js "^3.21.1"
+    eventemitter2 "^6.4.5"
+    lodash "^4.17.21"
+    prop-types "^15.8.1"
+
 "@formio/semantic@^2.4.5":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@formio/semantic/-/semantic-2.5.1.tgz#cff24ba67320c0e11b3a0f0921802867e8dea79d"
@@ -7254,6 +7265,11 @@ core-js@^3.19.2:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.5.tgz#a5f5a58e663d5c0ebb4e680cd7be37536fb2a9cf"
   integrity sha512-VP/xYuvJ0MJWRAobcmQ8F2H6Bsn+s7zqAAjFaHGBMc5AQm7zaelhD1LGduFn2EehEcQcU+br6t+fwbpQ5d1ZWA==
 
+core-js@^3.21.1:
+  version "3.25.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.0.tgz#be71d9e0dd648ffd70c44a7ec2319d039357eceb"
+  integrity sha512-CVU1xvJEfJGhyCpBrzzzU1kjCfgsGUxhEvwUV2e/cOedYWHdmluamx+knDnmhqALddMG16fZvIqvs9aijsHHaA==
+
 core-util-is@~1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
@@ -8737,6 +8753,11 @@ eventemitter2@^6.4.3:
   version "6.4.4"
   resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.4.tgz#aa96e8275c4dbeb017a5d0e03780c65612a1202b"
   integrity sha512-HLU3NDY6wARrLCEwyGKRBvuWYyvW6mHYv72SJJAH3iJN3a6eVUvkjFkcxah1bcTgGVBBrFdIopBJPhCQFMLyXw==
+
+eventemitter2@^6.4.5:
+  version "6.4.7"
+  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.7.tgz#a7f6c4d7abf28a14c1ef3442f21cb306a054271d"
+  integrity sha512-tYUSVOGeQPKt/eC1ABfhHy5Xd96N3oIijJvN3O9+TsC28T5V9yX9oEfEK5faP0EFSNVOG97qtAS68GBrQB2hDg==
 
 eventemitter3@^4.0.0:
   version "4.0.7"
