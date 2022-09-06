@@ -11,7 +11,12 @@ class Select extends Formio.Components.components.select {
   get inputInfo() {
     const info = super.inputInfo;
     // change the default CSS classes
-    info.attr.class = applyPrefix('select');
+    info.attr.class = [
+      applyPrefix('select'),
+      'utrecht-select',
+      'utrecht-select--html-select',
+      'utrecht-select--openforms',
+    ].join(' ');
     return info;
   }
 

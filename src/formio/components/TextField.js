@@ -24,7 +24,12 @@ class TextField extends Formio.Components.components.textfield {
   get inputInfo() {
     const info = super.inputInfo;
     // change the default CSS classes
-    info.attr.class = applyPrefix('input');
+    info.attr.class = [
+      applyPrefix('input'),
+      'utrecht-textbox',
+      'utrecht-textbox--html-input',
+      'utrecht-textbox--openforms',
+    ].join(' ');
     return info;
   }
 
