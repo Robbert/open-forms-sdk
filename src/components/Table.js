@@ -4,15 +4,22 @@ import classNames from 'classnames';
 
 import Body from 'components/Body';
 import {getBEMClassName} from 'utils';
-
+import {
+  Table as NLTable,
+  TableBody as NLTableBody,
+  TableCaption as NLTableCaption,
+  TableRow as NLTableRow,
+  TableCell as NLTableCell,
+  TableHeaderCell as NLTableHeaderCell,
+} from '@utrecht/component-library-react';
 
 const TableCell = ({ children, component=Body, modifiers=[] }) => {
   const Component = component;
   const className = getBEMClassName('table__cell', modifiers);
   return (
-    <td className={className}>
+    <NLTableCell className={className}>
       <Component component={'div'}>{children}</Component>
-    </td>
+    </NLTableCell>
   );
 };
 
@@ -26,9 +33,9 @@ const TableHead = ({ children, component=Body, modifiers=[] }) => {
   const Component = component;
   const className = getBEMClassName('table__head', modifiers);
   return (
-    <th className={className}>
+    <NLTableHeaderCell className={className}>
       <Component>{children}</Component>
-    </th>
+    </NLTableHeaderCell>
   );
 };
 
@@ -38,16 +45,15 @@ TableHead.propTypes = {
     modifiers: PropTypes.arrayOf(PropTypes.string),
 };
 
-
 const TableRow = ({ children, className='' }) => {
   className = classNames(
     getBEMClassName('table__row'),
     className,
   );
   return (
-    <tr className={className}>
+    <NLTableRow className={className}>
       {children}
-    </tr>
+    </NLTableRow>
   );
 };
 
@@ -59,11 +65,9 @@ TableRow.propTypes = {
 const Table = ({ children, }) => {
   const className = getBEMClassName('table');
   return (
-    <table className={className}>
-      <tbody>
+    <NLTable className={className}>
         {children}
-      </tbody>
-    </table>
+    </NLTable>
   );
 };
 
@@ -71,5 +75,35 @@ Table.propTypes = {
     children: PropTypes.node,
 };
 
+const TableBody = ({ children, }) => {
+  return (
+    <NLTableBody>
+      {children}
+    </NLTableBody>
+  );
+};
 
-export {Table, TableRow, TableHead, TableCell};
+TableBody.propTypes = {
+    children: PropTypes.node,
+};
+
+const TableCaption = ({ children, }) => {
+  return (
+    <NLTableCaption className={getBEMClassName('caption')}>
+      {children}
+    </NLTableCaption>
+  );
+};
+
+TableCaption.propTypes = {
+    children: PropTypes.node,
+};
+
+export {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableRow,
+};
