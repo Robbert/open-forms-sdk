@@ -118,6 +118,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@utrecht/component-library-react": "1.0.0-alpha.140",
     "@utrecht/components": "1.0.0-alpha.278",
     "@utrecht/design-tokens": "^1.0.0-alpha.319",
     "babel-jest": "^27.4.2",
