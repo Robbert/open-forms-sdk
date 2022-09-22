@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {getBEMClassName} from 'utils';
+import { Button as UtrechtButton, LinkButton as UtrechtLinkButton } from '@utrecht/component-library-react';
 
 export const VARIANTS = [
   '',
@@ -36,10 +37,27 @@ const Button = ({ type='', component: Component='button', variant='', onDisabled
       };
     }
 
+    if (variant === 'primary') {
+      props.appearance = 'primary-action-button';
+    }
+    else if (variant === 'danger') {
+      props.appearance = 'primary-action-button';
+      props.hint = 'danger';
+      props.className = `${props.className} utrecht-button--danger`;
+    }
+
+    children = children ? <span className={getBEMClassName('button__label')}>{children}</span> : null;
+
+    if (variant === 'anchor') {
+      return <UtrechtLinkButton {...props}>
+        {children}
+      </UtrechtLinkButton>
+    }
+
     return (
-      <Component {...props}>
-        { children ? <span className={getBEMClassName('button__label')}>{children}</span> : null }
-      </Component>
+      <UtrechtButton {...props}>
+        {children}
+      </UtrechtButton>
     );
 };
 
