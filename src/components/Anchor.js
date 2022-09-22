@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {getBEMClassName} from 'utils';
+import { Link as UtrechtLink } from '@utrecht/component-library-react';
 
 export const ANCHOR_MODIFIERS = [
   'hover',
@@ -51,7 +52,7 @@ const Anchor = ({ children, href, modifiers=[], component: Component='a', ...ext
   }
 
   return (
-    <Component className={className} {...extraProps}>{children}</Component>
+    <UtrechtLink className={className} {...extraProps}>{children}</UtrechtLink>
   );
 };
 
