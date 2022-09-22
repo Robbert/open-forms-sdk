@@ -69,6 +69,42 @@ $button-padding-h: $grid-margin-2;
   }
 }
 
+
+:root {
+
+    --utrecht-document-color: #{$typography-color-text};
+    --utrecht-document-font-family: #{$typography-font-family-text};
+
+    --utrecht-button-padding-block-start: #{$button-padding-v};
+    --utrecht-button-padding-block-end: #{$button-padding-v};
+    --utrecht-button-padding-inline-start:#{$button-padding-h};
+    --utrecht-button-padding-inline-end:#{$button-padding-h};
+    --utrecht-button-min-block-size:none;
+
+    // default
+    --utrecht-button-color: #{$typography-color-text};
+    --utrecht-button-background-color: #{$color-background};
+    --utrecht-button-border-color: #{$color-border};
+    --utrecht-button-hover-background-color: var(--of-button-hover-bg);
+    --utrecht-button-hover-border-color: var(--of-button-hover-color-border);
+    --utrecht-button-active-color: var(--of-button-active-fg);
+    --utrecht-button-active-background-color: var(--of-button-active-bg);
+    --utrecht-button-active-border-color: var(--of-button-active-color-border);
+
+    // primary
+    --utrecht-button-primary-action-color: var(--of-button-primary-fg);
+    --utrecht-button-primary-action-background-color: var(--of-button-primary-bg);
+    --utrecht-button-primary-action-border-color: var(--of-button-primary-border);
+    --utrecht-button-primary-action-hover-background-color: var(--of-button-primary-hover-bg);
+    --utrecht-button-primary-action-hover-border-color: var(--of-button-primary-hover-color-border);
+    --utrecht-button-primary-action-active-color: var(--of-button-primary-active-fg);
+    --utrecht-button-primary-action-active-background-color: var(--of-button-primary-active-bg);
+    --utrecht-button-primary-action-active-border-color: var(--of-button-primary-active-color-border);
+
+    // icon
+    --utrecht-button-icon-gap: $button-padding-h;
+}
+
 .#{prefix(button)} {
   @include body;
   @include body--big;
@@ -152,4 +188,26 @@ $button-padding-h: $grid-margin-2;
   .fa-icon:not(:last-child) {
     margin-right: $button-padding-h;
   }
+}
+
+.utrecht-button--disabled {
+    filter: saturate(0);
+    opacity: 0.5;
+
+}
+
+.utrecht-button--of-danger {
+    filter: saturate(0);
+    opacity: 0.5;
+  
+}
+
+.utrecht-button--of-danger {
+    --_utrecht-button-color: var(--of-button-danger-fg);
+    --_utrecht-button-background-color:var(--of-button-danger-bg);
+    --_utrecht-button-border-color: var(--of-button-danger-color-border);
+    --_utrecht-button-hover-background-color:var(--of-button-danger-hover-bg);
+    --_utrecht-button-hover-border-color:var(--of-button-danger-hover-color-border);
+    --_utrecht-button-active-color: var(--of-button-danger-active-fg);
+    --_utrecht-button-active-border-color: var(--of-button-danger-active-color-border);
 }
