@@ -12,5 +12,11 @@ window.onload = () => {
       basePath: '/',
     });
     form.init();
+
+    const theme = (new URLSearchParams(document.location.search)).get('theme');
+    if (theme) {
+      document.documentElement.classList.remove('openforms-theme');
+      document.documentElement.classList.add(theme);
+    }
 };
 
