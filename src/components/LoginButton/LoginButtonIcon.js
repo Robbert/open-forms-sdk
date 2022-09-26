@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {getBEMClassName} from '../../utils';
 
-import Button from 'components/Button';
 
 // FIXME: this really should not be a <input type="image" />, it completely violates
 // the semantics and expectations of how it should be used: as an actual form submit
@@ -14,9 +14,8 @@ import Button from 'components/Button';
 // document the href attribute.
 
 const LoginButtonIcon = ({ identifier, logo: { href, imageSrc } }) => (
-  <Button
-    variant="image"
-    component="input"
+  <input
+    className={getBEMClassName('button', ['image'])}
     type="image"
     href={href}
     src={imageSrc}
