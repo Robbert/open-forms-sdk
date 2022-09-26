@@ -22,6 +22,11 @@ class TimeField extends Time {
 
   get inputInfo() {
     const info = super.inputInfo;
+    const parentRef = super.elementInfo(); 
+    const parentId = parentRef.component && parentRef.component.id;
+    
+    info.attr['aria-describedby'] = parentId && `${parentId}-errors`;
+
     // change the default CSS classes
     info.attr.class = [
       getBEMClassName('input', ['time']),

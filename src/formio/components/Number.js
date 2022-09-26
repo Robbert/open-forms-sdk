@@ -16,6 +16,10 @@ class Number extends Formio.Components.components.number {
 
   get inputInfo() {
     const info = super.inputInfo;
+    const parentRef = super.elementInfo(); 
+    const parentId = parentRef.component && parentRef.component.id;
+    
+    info.attr['aria-describedby'] = parentId && `${parentId}-errors`;
     // change the default CSS classes
     info.attr.class = [
       applyPrefix('input'),

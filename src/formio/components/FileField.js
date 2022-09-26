@@ -32,6 +32,16 @@ class FileField extends Formio.Components.components.file {
     return options;
   }
 
+  get inputInfo() {
+    const info = super.inputInfo;
+    const parentRef = super.elementInfo(); 
+    const parentId = parentRef.component && parentRef.component.id;
+    
+    info.attr['aria-describedby'] = parentId && `${parentId}-errors`;
+    
+    return info;
+  }
+
   upload(files) {
     if (this.component.multiple && this.component.maxNumberOfFiles) {
       // this.data.file contains files that may have already been uploaded, while the argument 'files' gives the

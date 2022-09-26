@@ -9,6 +9,11 @@ import { applyPrefix } from '../utils';
 class TextArea extends Formio.Components.components.textarea {
   get inputInfo() {
     const info = super.inputInfo;
+    const parentRef = super.elementInfo(); 
+    const parentId = parentRef.component && parentRef.component.id;
+    
+    info.attr['aria-describedby'] = parentId && `${parentId}-errors`;
+    
     // change the default CSS classes
     info.attr.class = [
       applyPrefix('textarea'),

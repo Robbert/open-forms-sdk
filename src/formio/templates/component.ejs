@@ -6,5 +6,5 @@
     {% if (ctx.visible) { %}
       {{ctx.children}}
     {% } %}
-  <div ref="messageContainer" class="{{ctx.ofPrefix}}errors"></div>
+  <div ref="messageContainer" id="{{ctx.id}}-errors" class="{{ctx.ofPrefix}}errors"></div>
 </div>
