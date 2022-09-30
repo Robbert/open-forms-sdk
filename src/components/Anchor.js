@@ -51,6 +51,8 @@ const Anchor = ({ children, href, modifiers=[], component: Component='a', ...ext
     extraProps.onClick = onClick;
   }
 
+  console.log('className', className)
+
   return (
     <UtrechtLink className={className} {...extraProps}>{children}</UtrechtLink>
   );

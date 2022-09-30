@@ -7,7 +7,7 @@
 .#{prefix('anchor')} {
   @include text;
 
-  &:not(#{&}--hover) {
+  &:not(#{&}--hover):not(.utrecht-link) {
     @include anchor;
   }
   @include modifier('hover') {
