@@ -3,16 +3,13 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-const resolve = require('resolve');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const ESLintPlugin = require('eslint-webpack-plugin');
@@ -20,10 +17,6 @@ const paths = require('./paths');
 const modules = require('./modules');
 const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
-const ForkTsCheckerWebpackPlugin =
-  process.env.TSC_COMPILE_ON_ERROR === 'true'
-    ? require('react-dev-utils/ForkTsCheckerWarningWebpackPlugin')
-    : require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
@@ -253,7 +246,7 @@ module.exports = function (webpackEnv) {
       level: 'none',
     },
     optimization: {
-      minimize: isEnvProduction,
+      minimize: false,
       minimizer: [
         // This is only used in production mode
         new TerserPlugin({
@@ -282,6 +275,31 @@ module.exports = function (webpackEnv) {
             },
             mangle: {
               safari10: true,
+              reserved: [
+                "button",
+                "component",
+                "checkbox",
+                "radio",
+                "select",
+                "textfield",
+                "textarea",
+                "iban",
+                "email",
+                "currency",
+                "number",
+                "content",
+                "date",
+                "time",
+                "postcode",
+                "phoneNumber",
+                "bsn",
+                "file",
+                "map",
+                "password",
+                "licenseplate",
+                "coSign",
+                "editgrid"
+              ]
             },
             // Added for profiling in devtools
             keep_classnames: isEnvProductionProfile,

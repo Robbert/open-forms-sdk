@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import {getBEMClassName} from 'utils';
-import { Link as UtrechtLink, ButtonLink as UtrechtButtonLink } from '@utrecht/component-library-react';
+import { Link as UtrechtLink } from '@utrecht/component-library-react';
 
 export const ANCHOR_MODIFIERS = [
   'hover',
@@ -18,9 +18,8 @@ function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
 
-
-const Anchor = ({ children, href, modifiers=[], component: Component = 'Link', ...extra }) => {
-  const className = getBEMClassName('anchor', modifiers);
+const Anchor = ({ children, href, modifiers=[], className, ...extra }) => {
+  const classNames = classnames(getBEMClassName('anchor', modifiers), className);
   const {navigate, ...rest} = extra; // workaround for https://github.com/ReactTraining/react-router/issues/6962
   const extraProps = {...rest};
   if (href) {
@@ -52,13 +51,11 @@ const Anchor = ({ children, href, modifiers=[], component: Component = 'Link', .
     extraProps.onClick = onClick;
   }
 
-  return Component === 'ButtonLink' ? (
-      <UtrechtButtonLink className={className} {...extraProps}>{children}</UtrechtButtonLink>
-    ): Component === 'Link' ? (
-      <UtrechtLink className={classNames(className, 'hello-world')} {...extraProps}>{children}</UtrechtLink>
-    ): (
-      <Component className={className} {...extraProps}>{children}</Component>
-    )
+  console.log('!!!!', classNames)
+
+  return (
+    <UtrechtLink className={classNames} {...extraProps}>{children}</UtrechtLink>
+  );
 };
 
 Anchor.propTypes = {
@@ -68,7 +65,7 @@ Anchor.propTypes = {
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
     ]),
-    component: PropTypes.string,
+    className: PropTypes.string,
     onClick: PropTypes.func,
 };
 

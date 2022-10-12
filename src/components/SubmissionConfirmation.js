@@ -14,6 +14,7 @@ import Loader from 'components/Loader';
 import PaymentForm from 'components/PaymentForm';
 import {Toolbar, ToolbarList} from 'components/Toolbar';
 import usePoll from 'hooks/usePoll';
+import { Heading1 } from '@utrecht/component-library-react';
 
 const RESULT_FAILED = 'failed';
 const RESULT_SUCCESS = 'success';
@@ -102,6 +103,7 @@ const SubmissionConfirmation = ({statusUrl, onFailure, onConfirmed}) => {
 
   if (loading) {
     return (
+      <><Heading1>HELLOOOOO</Heading1>
       <Card title={<FormattedMessage
                     description="Checking background processing status title"
                     defaultMessage="Processing..." />}>
@@ -114,7 +116,7 @@ const SubmissionConfirmation = ({statusUrl, onFailure, onConfirmed}) => {
           />
         </Body>
 
-      </Card>
+      </Card></>
     );
   }
 
@@ -149,8 +151,8 @@ const SubmissionConfirmation = ({statusUrl, onFailure, onConfirmed}) => {
         />
 
         <Body>
-          <FAIcon icon="download" aria-hidden="true" modifiers={['inline']} />
-          <Anchor href={reportDownloadUrl} target="_blank" rel="noopener noreferrer">
+          <Anchor component='ButtonLink' appearance="secondary-action-button" href={reportDownloadUrl} target="_blank" rel="noopener noreferrer">
+            <FAIcon icon='download' aria-hidden='true' modifiers={['inline']} />
             <FormattedMessage
               description="Download report PDF link title"
               defaultMessage="Download PDF"
